@@ -1,0 +1,15 @@
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ""#to return empty string
+        smallest, largest = min(strs), max(strs)# find max min strings
+        for index,char in enumerate(smallest):#find smallest index and character
+            if char!=largest[index]:#find mismatch
+                return smallest[:index]# return prefix upto mismatch
+        return smallest
+
+        
