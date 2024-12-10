@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution(object):
+    def frequencySort(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        freq = Counter(s)
+        sorted_chars = freq.most_common()
+        result = ''.join([char*count for char,count in sorted_chars])
+        return result
