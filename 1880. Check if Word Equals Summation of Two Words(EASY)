@@ -1,0 +1,14 @@
+class Solution(object):
+    def isSumEqual(self, firstWord, secondWord, targetWord):
+        """
+        :type firstWord: str
+        :type secondWord: str
+        :type targetWord: str
+        :rtype: bool
+        """
+        def wordToValue(word):
+            return int("".join(str(ord(char) - ord('a'))for char in word))
+        f=wordToValue(firstWord)
+        s=wordToValue(secondWord)
+        t=wordToValue(targetWord)
+        return f+s == t
